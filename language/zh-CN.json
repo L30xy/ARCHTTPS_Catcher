@@ -1,0 +1,26 @@
+{
+    "output_dir": "arc_logs",
+    "time_format": "%m-%d-%H-%M-%S",
+    "naming": {
+        "request": "{method}_{path}_{time}.txt",
+        "response": "RESPONSE_{path}_{time}.txt",
+        "fallback_req": "UNKNOWN_REQ_{time}.txt",
+        "fallback_res": "RESPONSE_UNKNOWN_{time}.txt"
+    },
+    "extract_rules": {
+        "res_extract_regex": "\"current_map\":\"([^\"]+)\""
+    },
+    "prompts": {
+        "connecting": "[*] 正在连接 {host} ...",
+        "attached": "[*] 成功附加到 Gadget！",
+        "attach_failed": "[-] 附加失败: {error}",
+        "script_failed": "[-] 脚本加载失败: {error}",
+        "pkg_locked": "(・ω・) 目标包名已锁定: {package}",
+        "capture_req": "[+] catch REQ  -> {filename}",
+        "capture_res": "[+] catch RES  -> {filename}",
+        "divider": "=====================================",
+        "ready": "[*] 抓包模块加载完毕！",
+        "data_saved": "[*] 数据将保存在 '{dir}/<包名>/' 目录下。",
+        "stop_hint": "[*] 请操作游戏，按 Ctrl+C 停止。"
+    }
+}
