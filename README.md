@@ -1,6 +1,6 @@
 # Arcaea HTTPS 抓包工具 (基于 Frida Gadget)
 
-这是一个基于 `Frida Gadget` 和 `Zygisk` 注入的高级 Android HTTPS 明文抓包工具。通过直接 Hook 底层的 `SSL_read` 和 `SSL_write` 函数，彻底绕过应用层的 SSL Pinning（证书绑定）校验。
+这是一个基于 `Frida Gadget` 和 `Zygisk` 注入的 Android HTTPS 明文抓包工具。通过直接 Hook 底层的 `SSL_read` 和 `SSL_write` 函数，彻底绕过应用层的 SSL Pinning（证书绑定）校验。
 
 本项目特别针对基于 Cocos2d-x 引擎的音游（如 Arcaea）进行了深度优化，解决了多线程并发串包、分片传输（Chunked）、Gzip 压缩丢失等痛点问题。
 
@@ -74,7 +74,7 @@
 
 ### 抓包步骤
 
-  0\.    先行配置 Android 端与 Windows 端环境。
+0. 先行配置 Android 端与 Windows 端环境。
 
 1. 将手机通过 USB 连接至电脑，并开启“USB 调试”。
 
