@@ -1,0 +1,25 @@
+ 强制降级到指定版本
+要绕过 pip 的缓存和自动依赖解析，强制安装你想要的版本，请按顺序执行以下步骤。
+
+1. 彻底卸载并清理缓存
+首先，需要干净地移除现有包，并清除 pip 可能已经缓存的旧版本文件。
+
+bash
+pip uninstall frida frida-tools -y
+接着，清除 pip 缓存，这是避免安装时被旧缓存“插队”的关键一步：
+
+bash
+pip cache purge
+2. 使用 --no-cache-dir 强制安装指定版本
+使用 --no-cache-dir 和 --force-reinstall 参数，确保 pip 忽略所有缓存，从源上重新下载你指定的版本。
+
+bash
+pip install --no-cache-dir --force-reinstall frida==17.5.2 frida-tools==14.5.2
+--no-cache-dir 参数是解决问题的核心，它会指示 pip 在此次安装中完全不使用任何本地缓存。
+
+3. 验证安装结果
+关闭当前的 CMD 窗口，重新打开一个，然后检查版本是否已成功降级：
+
+bash
+frida --version
+期望的输出应该是 17.5.2。
